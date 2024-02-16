@@ -18,4 +18,5 @@ char Reflector::ChiperChar(char c){
         if(c == key_base[i])
             return key_actual[i];
     }
+    return ' ';
 }

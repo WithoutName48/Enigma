@@ -59,7 +59,7 @@ int main()
     getline(cin, text, '\n');
     while(text != "0"){
         //Encryption or Decryption
-        for(int i=0; i<text.length(); i++){
+        for(int i = 0; i < (int)text.length(); i++){
             char c = text[i];
             if(!isalpha(c))
                 continue;

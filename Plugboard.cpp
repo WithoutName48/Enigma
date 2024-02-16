@@ -26,4 +26,5 @@ char Plugboard::ChiperChar(char c, bool before_reflector){
                 return key_base[i];
         }
     }
+    return ' ';
 }
