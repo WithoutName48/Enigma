@@ -68,7 +68,7 @@ int main()
     while (text != "0")
     {
         // Encryption and Decryption
-        for (int i = 0; i < text.length(); i++)
+        for (int i = 0; i < (int)text.length(); i++)
         {
             char c = text[i];
             if (!isalpha(c))
@@ -91,7 +91,7 @@ int main()
         }
         // cout << "Po szyfrowaniu/odszyfrowaniu: " << endl;
         cout << text << endl;
-        getline(cin, text);
+        getline(cin, text, '\n');
     }
     return 0;
 }
