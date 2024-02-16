@@ -23,8 +23,8 @@ int main()
     tabRotors[3] = new Rotor(key_base, r4_key, 1);
     tabRotors[4] = new Rotor(key_base, r5_key, 1);
 
-    // cout << "Dostepnych jest 5 roznych wirnikow. Wybierz 3 z nich i podaj ich kolejnosc (numer wirnika - od 1 do 5 wlcznie) oddzielajac je spacja." << endl;
-    // cout << "Podaj kolejnosc wirnikow: " << endl;
+    cout << "Dostepnych jest 5 roznych wirnikow. Wybierz 3 z nich i podaj ich kolejnosc (numer wirnika - od 1 do 5 wlcznie) oddzielajac je spacja." << endl;
+    cout << "Podaj kolejnosc wirnikow: " << endl;
     int num1, num2, num3;
     cin >> num1 >> num2 >> num3;
     num1--;
@@ -34,7 +34,7 @@ int main()
     tabRotors[num2]->SetTurnoverLimit(pow(key_base.length(), 1));
     tabRotors[num3]->SetTurnoverLimit(pow(key_base.length(), 2));
 
-    // cout << "Podaj poczatkowe ustawienie wirnikow (liczba od 1 do 26 wlacznie): " << endl;
+    cout << "Podaj poczatkowe ustawienie wirnikow (liczba od 1 do 26 wlacznie): " << endl;
     int rt1_settings, rt2_settings, rt3_settings;
     cin >> rt1_settings >> rt2_settings >> rt3_settings;
     tabRotors[num1]->SetRotor(rt1_settings, 0);
@@ -42,7 +42,7 @@ int main()
     tabRotors[num3]->SetRotor(rt3_settings, key_base.length() * rt2_settings + rt1_settings);
 
     Reflector *rf = new Reflector(key_base);
-    // cout << "Podaj ustawienie Reflector. Najpierw podaj pierwszy element pary, a potem nastepny (nie oddzielaj ich spacja). Kazda pare oddziel spacja. Ciag par mozesz zakonczyc wpisujac '0'. " << endl;
+    cout << "Podaj ustawienie Reflector. Najpierw podaj pierwszy element pary, a potem nastepny (nie oddzielaj ich spacja). Kazda pare oddziel spacja. Ciag par mozesz zakonczyc wpisujac '0'. " << endl;
     string rf_settings;
     cin >> rf_settings;
     while (rf_settings != "0")
@@ -52,7 +52,7 @@ int main()
     }
 
     Plugboard *pb = new Plugboard(key_base);
-    // cout << "Podaj ustawienie Plugboard. Najpierw podaj pierwszy element pary, a potem nastepny (nie oddzielaj ich spacja). Kazda pare oddziel spacja. Ciag par mozesz zakonczyc wpisujac '0'. " << endl;
+    cout << "Podaj ustawienie Plugboard. Najpierw podaj pierwszy element pary, a potem nastepny (nie oddzielaj ich spacja). Kazda pare oddziel spacja. Ciag par mozesz zakonczyc wpisujac '0'. " << endl;
     string pb_settings;
     cin >> pb_settings;
     while (pb_settings != "0")
@@ -61,13 +61,13 @@ int main()
         cin >> pb_settings;
     }
 
-    // cout << "Wpisz tekst do odszyfrowania lub zaszyfrowania, aby zakonczyc dzialanie programu wpisz '0': " << endl;
+    cout << "Wpisz tekst do odszyfrowania lub zaszyfrowania, aby zakonczyc dzialanie programu wpisz '0': " << endl;
     cin.get();
     string text;
     getline(cin, text, '\n');
     while (text != "0")
     {
-        // Encryption and Decryption
+        // Encryption
         for (int i = 0; i < (int)text.length(); i++)
         {
             char c = text[i];
@@ -89,7 +89,7 @@ int main()
             tabRotors[num2]->IncreaseTurnoverNumber();
             tabRotors[num3]->IncreaseTurnoverNumber();
         }
-        // cout << "Po szyfrowaniu/odszyfrowaniu: " << endl;
+        cout << "Po szyfrowaniu: " << endl;
         cout << text << endl;
         getline(cin, text, '\n');
     }
